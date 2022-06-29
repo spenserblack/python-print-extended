@@ -1,5 +1,8 @@
 # print-extended
 
+[![CI](https://github.com/spenserblack/python-print-extended/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/python-print-extended/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/spenserblack/python-print-extended/branch/main/graph/badge.svg?token=tgIB3T966J)](https://codecov.io/gh/spenserblack/python-print-extended)
+
 An extended version of the print function.
 
 The intent is to make it easy to print pretty outputs, with an interface
