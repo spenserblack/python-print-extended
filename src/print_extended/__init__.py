@@ -1,12 +1,39 @@
 """
 A module to make it easy to use print with pretty formatting.
+
+# Basic usage
+
+```python
+from print_extended import print
+print("Hello, world!")
+```
 """
+import sys
 
-__all__ = ["add2"]
+__all__ = ["Printer", "print", "eprint"]
 
 
-def add2(n):
+class Printer:
     """
-    Adds 2 to n.
+    A class to make it easy to use print with pretty formatting.
     """
-    return n + 2
+
+    _print = print
+
+    def __init__(self, file=sys.stdout):
+        """
+        Initialize the printer.
+
+        # Args
+
+        - `file`: The file to print to.
+        """
+        self.file = file
+
+    def __call__(self, *args, **kwargs):
+        file = kwargs.pop("file", self.file)
+        return self._print(file=file, *args, **kwargs)
+
+
+print = Printer()
+eprint = Printer(file=sys.stderr)

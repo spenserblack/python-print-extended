@@ -1,11 +1,22 @@
+from io import StringIO
 from unittest import TestCase
 
-from src.print_extended import add2
+from src.print_extended import Printer
 
 
-class Add2Tests(TestCase):
-    def test_it_works(self):
+class TestPrinter(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.out = StringIO()
+        cls.print = Printer(cls.out)
+
+    def tearDown(self):
+        self.out.truncate(0)
+        self.out.seek(0)
+
+    def test_basic_usage(self):
         """
-        add2(1) should return 3.
+        It should wrap the builtin print function.
         """
-        self.assertEqual(add2(1), 3)
+        self.print("Hello, world!")
+        self.assertEqual(self.out.getvalue(), "Hello, world!\n")
