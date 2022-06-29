@@ -2,7 +2,7 @@
 
 An extended version of the print function.
 
-The intent is to make it easy to print pretty outputs with an interface
+The intent is to make it easy to print pretty outputs, with an interface
 that Python beginners who just made their first "Hello World" can use.
 
 You can always use `pprint`, `sys.stderr`, etc., and probably should for
