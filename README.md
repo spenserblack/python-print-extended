@@ -11,6 +11,14 @@ complex usage. As stated, this is to be beginner-friendly.
 ## Features
 
 - `print.group` and `print.endgroup` to create indentation levels
+- colored prints
+  - `print.red('foo')`
+  - `print.green('foo')`
+  - `print.blue('foo')`
+  - `print.yellow('foo')`
+  - `print.magenta('foo')`
+  - `print.cyan('foo')`
+  - `print.rgb(r, g, b)('foo')`
 - `print.info` (same as `print` by default, but can be used by a `print.logger`)
 - `print.err` and `print.warn` that will attempt to style outputs red and yellow, respectively
 - `eprint` to simplify printing to STDERR
