@@ -22,10 +22,4 @@ complex usage. As stated, this is to be beginner-friendly.
 - `print.info` (same as `print` by default, but can be used by a `print.logger`)
 - `print.err` and `print.warn` that will attempt to style outputs red and yellow, respectively
 - `eprint` to simplify printing to STDERR
-- `print.logger` to build a printer with a prefix (defaults to `[LEVEL] TIMESTAMP MESSAGE`)
-  - ```python
-    # Example
-    logger = print.logger()
-    logger.info('Hello World')
-    # [INFO] 2022/01/01 13:00:00 - Hello World
-    ```
+- `print.prefix` to build a printer with a prefix (e.g `[LEVEL] TIMESTAMP MESSAGE`)
