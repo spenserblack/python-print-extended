@@ -9,12 +9,13 @@ The intent is to make it easy to print pretty outputs, with an interface
 that Python beginners who just made their first "Hello World" can use.
 
 You can always use `pprint`, `sys.stderr`, etc., and probably should for
-complex usage. As stated, this is to be beginner-friendly.
+complex usage. As stated, this is to be beginner-friendly. Functionality
+will be sacrificed for ease-of-use.
 
 ## Features
 
 - `print.group` and `print.endgroup` to create indentation levels
-- colored prints
+- colored/styled prints
   - `print.red('foo')`
   - `print.green('foo')`
   - `print.blue('foo')`
@@ -22,7 +23,8 @@ complex usage. As stated, this is to be beginner-friendly.
   - `print.magenta('foo')`
   - `print.cyan('foo')`
   - `print.rgb(r, g, b)('foo')`
-- `print.info` (same as `print` by default, but can be used by a `print.logger`)
-- `print.err` and `print.warn` that will attempt to style outputs red and yellow, respectively
+  - `print.bold('foo')`
+  - `print.italic('foo')`
+  - `print.underline('foo')`
+  - Also chainable! `print.red.bold.italic('error')`
 - `eprint` to simplify printing to STDERR
-- `print.prefix` to build a printer with a prefix (e.g `[LEVEL] TIMESTAMP MESSAGE`)
