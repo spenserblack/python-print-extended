@@ -1,5 +1,7 @@
 import sty
 
+from src.print_extended import NoGroupError
+
 from . import PrinterTestCase
 
 
@@ -35,6 +37,13 @@ class TestPrinter(PrinterTestCase):
                 "no group",
             ],
         )
+
+    def test_extra_endgroup(self):
+        """
+        It should raise an error if an endgroup is called without a group.
+        """
+        with self.assertRaises(NoGroupError):
+            self.print.endgroup()
 
 
 class TestColors(PrinterTestCase):
