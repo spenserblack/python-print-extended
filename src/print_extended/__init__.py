@@ -51,7 +51,7 @@ class Printer:
         self._print(*self._sty, file=file, end="", sep="")
         self._print(file=file, *args, **kwargs)
         if len(self._sty) > 0:
-            self._print(sty.ef.rs, file=file, end="")
+            self._print(sty.rs.all, file=file, end="")
 
     def group(self):
         """

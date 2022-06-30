@@ -59,7 +59,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.black + "This is black\n" + sty.ef.rs + "This is not\n",
+            sty.fg.black + "This is black\n" + sty.rs.all + "This is not\n",
         )
 
     def test_red(self):
@@ -70,7 +70,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.red + "This is red\n" + sty.ef.rs + "This is not\n",
+            sty.fg.red + "This is red\n" + sty.rs.all + "This is not\n",
         )
 
     def test_green(self):
@@ -81,7 +81,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.green + "This is green\n" + sty.ef.rs + "This is not\n",
+            sty.fg.green + "This is green\n" + sty.rs.all + "This is not\n",
         )
 
     def test_blue(self):
@@ -92,7 +92,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.blue + "This is blue\n" + sty.ef.rs + "This is not\n",
+            sty.fg.blue + "This is blue\n" + sty.rs.all + "This is not\n",
         )
 
     def test_yellow(self):
@@ -103,7 +103,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.yellow + "This is yellow\n" + sty.ef.rs + "This is not\n",
+            sty.fg.yellow + "This is yellow\n" + sty.rs.all + "This is not\n",
         )
 
     def test_magenta(self):
@@ -114,7 +114,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.magenta + "This is magenta\n" + sty.ef.rs + "This is not\n",
+            sty.fg.magenta + "This is magenta\n" + sty.rs.all + "This is not\n",
         )
 
     def test_cyan(self):
@@ -125,7 +125,7 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.cyan + "This is cyan\n" + sty.ef.rs + "This is not\n",
+            sty.fg.cyan + "This is cyan\n" + sty.rs.all + "This is not\n",
         )
 
     def test_white(self):
@@ -136,5 +136,5 @@ class TestColors(PrinterTestCase):
         self.print("This is not")
         self.assertEqual(
             self.out.getvalue(),
-            sty.fg.white + "This is white\n" + sty.ef.rs + "This is not\n",
+            sty.fg.white + "This is white\n" + sty.rs.all + "This is not\n",
         )
