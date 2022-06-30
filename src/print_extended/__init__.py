@@ -68,12 +68,67 @@ class Printer:
         self.group_level -= 1
 
     @property
+    def black(self):
+        """
+        Returns a printer with the foreground color set to black.
+        """
+        return self._apply_fg("black")
+
+    @property
     def red(self):
         """
         A printer that prints red text.
         """
+        return self._apply_fg("red")
+
+    @property
+    def green(self):
+        """
+        A printer that prints green text.
+        """
+        return self._apply_fg("green")
+
+    @property
+    def blue(self):
+        """
+        A printer that prints blue text.
+        """
+        return self._apply_fg("blue")
+
+    @property
+    def yellow(self):
+        """
+        A printer that prints yellow text.
+        """
+        return self._apply_fg("yellow")
+
+    @property
+    def magenta(self):
+        """
+        A printer that prints magenta text.
+        """
+        return self._apply_fg("magenta")
+
+    @property
+    def cyan(self):
+        """
+        A printer that prints cyan text.
+        """
+        return self._apply_fg("cyan")
+
+    @property
+    def white(self):
+        """
+        A printer that prints white text.
+        """
+        return self._apply_fg("white")
+
+    def _apply_fg(self, fg):
+        """
+        Applies a foreground color to a new printer.
+        """
         p = self._copy()
-        p._sty.append(sty.fg.red)
+        p._sty.append(getattr(sty.fg, fg))
         return p
 
     def _copy(self):
