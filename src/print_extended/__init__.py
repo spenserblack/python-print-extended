@@ -10,6 +10,8 @@ print("Hello, world!")
 """
 import sys
 
+import sty
+
 __all__ = ["Printer", "print", "eprint", "NoGroupError"]
 
 
@@ -41,11 +43,15 @@ class Printer:
         self.file = file
         self.group_indent = group_indent
         self.group_level = 0
+        self._sty = []
 
     def __call__(self, *args, **kwargs):
         file = kwargs.pop("file", self.file)
         self._print(self.group_indent * self.group_level, file=file, end="")
+        self._print(*self._sty, file=file, end="", sep="")
         self._print(file=file, *args, **kwargs)
+        if len(self._sty) > 0:
+            self._print(sty.ef.rs, file=file, end="")
 
     def group(self):
         """
@@ -60,6 +66,24 @@ class Printer:
         if self.group_level == 0:
             raise NoGroupError()
         self.group_level -= 1
+
+    @property
+    def red(self):
+        """
+        A printer that prints red text.
+        """
+        p = self._copy()
+        p._sty.append(sty.fg.red)
+        return p
+
+    def _copy(self):
+        """
+        Creates a new printer with the same settings.
+        """
+        p = Printer(self.group_indent, self.file)
+        p._sty = self._sty.copy()
+        p.group_level = self.group_level
+        return p
 
 
 print = Printer()

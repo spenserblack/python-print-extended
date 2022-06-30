@@ -1,19 +1,9 @@
-from io import StringIO
-from unittest import TestCase
+import sty
 
-from src.print_extended import Printer
+from . import PrinterTestCase
 
 
-class TestPrinter(TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.out = StringIO()
-        cls.print = Printer(file=cls.out)
-
-    def tearDown(self):
-        self.out.truncate(0)
-        self.out.seek(0)
-
+class TestPrinter(PrinterTestCase):
     def test_basic_usage(self):
         """
         It should wrap the builtin print function.
@@ -44,4 +34,21 @@ class TestPrinter(TestCase):
                 "        group 2",
                 "no group",
             ],
+        )
+
+
+class TestColors(PrinterTestCase):
+    """
+    Test suite for colored outputs.
+    """
+
+    def test_red(self):
+        """
+        It should color red.
+        """
+        self.print.red("This is red")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            sty.fg.red + "This is red\n" + sty.ef.rs + "This is not\n",
         )

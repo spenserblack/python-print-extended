@@ -28,3 +28,13 @@ will be sacrificed for ease-of-use.
   - `print.underline('foo')`
   - Also chainable! `print.red.bold.italic('error')`
 - `eprint` to simplify printing to STDERR
+
+## Development
+
+```bash
+# Activate virtual environment
+python -m pip install -U pip
+python -m pip install .
+python -m pip install -r requirements-dev.txt
+pre-commit install
+```
