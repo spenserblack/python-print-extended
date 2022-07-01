@@ -123,6 +123,14 @@ class Printer:
         """
         return self._apply_fg("white")
 
+    def rgb(self, r, g, b):
+        """
+        A printer that prints text with the given RGB color.
+        """
+        p = self._copy()
+        p._sty.append(sty.fg.rgb_call(r, g, b))
+        return p
+
     def _apply_fg(self, fg):
         """
         Applies a foreground color to a new printer.
