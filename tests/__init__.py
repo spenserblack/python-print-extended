@@ -13,3 +13,7 @@ class PrinterTestCase(TestCase):
     def tearDown(self):
         self.out.truncate(0)
         self.out.seek(0)
+
+    @staticmethod
+    def ansify(*args):
+        return f"\x1B[{';'.join(str(arg) for arg in args)}m"
