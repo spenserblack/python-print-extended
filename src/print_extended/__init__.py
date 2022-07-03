@@ -199,6 +199,9 @@ class Printer:
         """
         Applies a foreground color to a new printer.
         """
+        # HACK
+        if fg == "white":
+            fg = "li_grey"
         p = self._copy()
         p._sty.append(getattr(sty.fg, fg))
         return p
