@@ -107,3 +107,105 @@ class TestColors(PrinterTestCase):
             + self.ansify(0)
             + "This is not\n",
         )
+
+    def test_on_black(self):
+        """
+        It should color the background black.
+        """
+        self.print.on_black("This is on black")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(40) + "This is on black\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_red(self):
+        """
+        It should color the background red.
+        """
+        self.print.on_red("This is on red")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(41) + "This is on red\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_green(self):
+        """
+        It should color the background green.
+        """
+        self.print.on_green("This is on green")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(42) + "This is on green\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_yellow(self):
+        """
+        It should color the background yellow.
+        """
+        self.print.on_yellow("This is on yellow")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(43) + "This is on yellow\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_blue(self):
+        """
+        It should color the background blue.
+        """
+        self.print.on_blue("This is on blue")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(44) + "This is on blue\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_magenta(self):
+        """
+        It should color the background magenta.
+        """
+        self.print.on_magenta("This is on magenta")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(45) + "This is on magenta\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_cyan(self):
+        """
+        It should color the background cyan.
+        """
+        self.print.on_cyan("This is on cyan")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(46) + "This is on cyan\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_white(self):
+        """
+        It should color the background white.
+        """
+        self.print.on_white("This is on white")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(47) + "This is on white\n" + self.ansify(0) + "This is not\n",
+        )
+
+    def test_on_rgb(self):
+        """
+        It should add RGB true colors to the background.
+        """
+        self.print.on_rgb(255, 127, 255)("This is pinkish purple")
+        self.print("This is not")
+        self.assertEqual(
+            self.out.getvalue(),
+            self.ansify(48, 2, 255, 127, 255)
+            + "This is pinkish purple\n"
+            + self.ansify(0)
+            + "This is not\n",
+        )
