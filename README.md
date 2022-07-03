@@ -1,5 +1,6 @@
 # print-extended
 
+[![PyPI](https://img.shields.io/pypi/v/python-print-extended)](https://pypi.org/project/python-print-extended/)
 [![CI](https://github.com/spenserblack/python-print-extended/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/python-print-extended/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/spenserblack/python-print-extended/branch/main/graph/badge.svg?token=tgIB3T966J)](https://codecov.io/gh/spenserblack/python-print-extended)
 
