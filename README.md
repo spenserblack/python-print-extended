@@ -22,9 +22,10 @@ pip install python-print-extended
 
 ```python
 # main.py
-from print_extended import print
+from print_extended import eprint, print
 
-print.green.bold('Hello, World!')
+print.green.bold('ok!')
+eprint.black.on_red.italic('error!')
 ```
 
 ## Features
