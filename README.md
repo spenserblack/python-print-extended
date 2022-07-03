@@ -50,7 +50,7 @@ print.green.bold('Hello, World!')
   - `print.bold('foo')`
   - `print.italic('foo')`
   - `print.underline('foo')`
-  - Also chainable! `print.red.bold.italic('error')`
+- styling and colors are chainable! `print.red.bold.italic('error')`
 - `eprint` to simplify printing to STDERR
 
 ## Development
