@@ -10,6 +10,7 @@ print("Hello, world!")
 """
 import sys
 
+# TODO Remove sty dependency?
 import sty
 
 __all__ = ["Printer", "print", "eprint", "NoGroupError"]
