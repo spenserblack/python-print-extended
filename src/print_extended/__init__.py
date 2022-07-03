@@ -211,6 +211,9 @@ class Printer:
         """
         Applies a background color to a new printer.
         """
+        # HACK
+        if bg == "white":
+            bg = "li_grey"
         p = self._copy()
         p._sty.append(getattr(sty.bg, bg))
         return p
