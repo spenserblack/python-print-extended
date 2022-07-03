@@ -75,11 +75,25 @@ class Printer:
         return self._apply_fg("black")
 
     @property
+    def on_black(self):
+        """
+        Returns a printer with the background color set to black.
+        """
+        return self._apply_bg("black")
+
+    @property
     def red(self):
         """
         A printer that prints red text.
         """
         return self._apply_fg("red")
+
+    @property
+    def on_red(self):
+        """
+        Returns a printer with the background color set to red.
+        """
+        return self._apply_bg("red")
 
     @property
     def green(self):
@@ -89,11 +103,25 @@ class Printer:
         return self._apply_fg("green")
 
     @property
+    def on_green(self):
+        """
+        Returns a printer with the background color set to green.
+        """
+        return self._apply_bg("green")
+
+    @property
     def blue(self):
         """
         A printer that prints blue text.
         """
         return self._apply_fg("blue")
+
+    @property
+    def on_blue(self):
+        """
+        Returns a printer with the background color set to blue.
+        """
+        return self._apply_bg("blue")
 
     @property
     def yellow(self):
@@ -103,11 +131,25 @@ class Printer:
         return self._apply_fg("yellow")
 
     @property
+    def on_yellow(self):
+        """
+        Returns a printer with the background color set to yellow.
+        """
+        return self._apply_bg("yellow")
+
+    @property
     def magenta(self):
         """
         A printer that prints magenta text.
         """
         return self._apply_fg("magenta")
+
+    @property
+    def on_magenta(self):
+        """
+        Returns a printer with the background color set to magenta.
+        """
+        return self._apply_bg("magenta")
 
     @property
     def cyan(self):
@@ -117,11 +159,25 @@ class Printer:
         return self._apply_fg("cyan")
 
     @property
+    def on_cyan(self):
+        """
+        Returns a printer with the background color set to cyan.
+        """
+        return self._apply_bg("cyan")
+
+    @property
     def white(self):
         """
         A printer that prints white text.
         """
         return self._apply_fg("white")
+
+    @property
+    def on_white(self):
+        """
+        Returns a printer with the background color set to white.
+        """
+        return self._apply_bg("white")
 
     def rgb(self, r, g, b):
         """
@@ -131,12 +187,28 @@ class Printer:
         p._sty.append(sty.fg.rgb_call(r, g, b))
         return p
 
+    def on_rgb(self, r, g, b):
+        """
+        Returns a printer with the background color set to the given RGB color.
+        """
+        p = self._copy()
+        p._sty.append(sty.bg.rgb_call(r, g, b))
+        return p
+
     def _apply_fg(self, fg):
         """
         Applies a foreground color to a new printer.
         """
         p = self._copy()
         p._sty.append(getattr(sty.fg, fg))
+        return p
+
+    def _apply_bg(self, bg):
+        """
+        Applies a background color to a new printer.
+        """
+        p = self._copy()
+        p._sty.append(getattr(sty.bg, bg))
         return p
 
     def _copy(self):

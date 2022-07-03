@@ -15,7 +15,7 @@ will be sacrificed for ease-of-use.
 ## Features
 
 - `print.group` and `print.endgroup` to create indentation levels
-- colored/styled prints
+- foreground colors
   - `print.red('foo')`
   - `print.green('foo')`
   - `print.blue('foo')`
@@ -23,6 +23,15 @@ will be sacrificed for ease-of-use.
   - `print.magenta('foo')`
   - `print.cyan('foo')`
   - `print.rgb(r, g, b)('foo')`
+- background colors
+  - `print.on_red('foo')`
+  - `print.on_green('foo')`
+  - `print.on_blue('foo')`
+  - `print.on_yellow('foo')`
+  - `print.on_magenta('foo')`
+  - `print.on_cyan('foo')`
+  - `print.on_rgb(r, g, b)('foo')`
+- text styles
   - `print.bold('foo')`
   - `print.italic('foo')`
   - `print.underline('foo')`
