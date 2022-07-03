@@ -174,14 +174,14 @@ class Printer:
         """
         A printer that prints white text.
         """
-        return self._apply_fg("white")
+        return self._apply_fg("li_grey")
 
     @property
     def on_white(self):
         """
         Returns a printer with the background color set to white.
         """
-        return self._apply_bg("white")
+        return self._apply_bg("li_grey")
 
     def rgb(self, r, g, b):
         """
@@ -199,13 +199,31 @@ class Printer:
         p._sty.append(sty.bg.rgb_call(r, g, b))
         return p
 
+    @property
+    def bold(self):
+        """
+        A printer that prints bold text.
+        """
+        return self._apply_style("bold")
+
+    @property
+    def underline(self):
+        """
+        A printer that prints underlined text.
+        """
+        return self._apply_style("underl")
+
+    @property
+    def italic(self):
+        """
+        A printer that prints italic text.
+        """
+        return self._apply_style("italic")
+
     def _apply_fg(self, fg):
         """
         Applies a foreground color to a new printer.
         """
-        # HACK
-        if fg == "white":
-            fg = "li_grey"
         p = self._copy()
         p._sty.append(getattr(sty.fg, fg))
         return p
@@ -214,11 +232,16 @@ class Printer:
         """
         Applies a background color to a new printer.
         """
-        # HACK
-        if bg == "white":
-            bg = "li_grey"
         p = self._copy()
         p._sty.append(getattr(sty.bg, bg))
+        return p
+
+    def _apply_style(self, style):
+        """
+        Applies a style to a new printer.
+        """
+        p = self._copy()
+        p._sty.append(getattr(sty.ef, style))
         return p
 
     def _copy(self):

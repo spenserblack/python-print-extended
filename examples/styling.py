@@ -29,3 +29,9 @@ for b in range(0, 256, 16):
 for g in range(255, -1, -16):
     print.on_rgb(0, g, 255)(" ", end="")
 print()
+
+print.bold("bold")
+print.italic("italic")
+print.underline("underline")
+
+print.red.bold.italic("red, bold, and italic")
