@@ -48,11 +48,14 @@ class Printer:
 
     def __call__(self, *args, **kwargs):
         file = kwargs.pop("file", self.file)
+        end = kwargs.pop("end", "\n")
         self._print(self.group_indent * self.group_level, file=file, end="")
         self._print(*self._sty, file=file, end="", sep="")
-        self._print(file=file, *args, **kwargs)
+        self._print(file=file, end="", *args, **kwargs)
         if len(self._sty) > 0:
-            self._print(sty.rs.all, file=file, end="")
+            self._print(sty.rs.all, file=file, end=end)
+        else:
+            self._print(file=file, end=end)
 
     def group(self):
         """
