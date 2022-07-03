@@ -13,6 +13,20 @@ You can always use `pprint`, `sys.stderr`, etc., and probably should for
 complex usage. As stated, this is to be beginner-friendly. Functionality
 will be sacrificed for ease-of-use.
 
+## Quick Start
+
+```bash
+# In your console or command-line
+pip install python-print-extended
+```
+
+```python
+# main.py
+from print_extended import print
+
+print.green.bold('Hello, World!')
+```
+
 ## Features
 
 - `print.group` and `print.endgroup` to create indentation levels
